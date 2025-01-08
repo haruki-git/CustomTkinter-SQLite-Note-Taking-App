@@ -59,7 +59,7 @@ CustomTkinter-SQLite-Note-Taking-App
 2. **ターミナルでカレントディレクトリを指定**
 　- ターミナル（コマンドプロンプト）で、アプリケーションのディレクトリに移動
    ```bash
-　cd C:\[ディレクトリの絶対パス]　
+   cd C:\[ディレクトリの絶対パス]　
 
 3. **必要なライブラリをインストール**
    ```bash
@@ -67,7 +67,7 @@ CustomTkinter-SQLite-Note-Taking-App
 
 4. **メインアプリケーションコードを実行**
    ```bash
-　python stacknote.py
+   python stacknote.py
 
 
 ## ライセンス
