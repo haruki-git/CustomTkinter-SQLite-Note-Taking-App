@@ -60,10 +60,10 @@ CustomTkinter-SQLite-Note-Taking-App
 
 2. **ノートファイルのダウンロード**
    - リポジトリ全体をダウンロードする場合
-     - (a), GitHub のリポジトリページにアクセス
-     - (b), 右にある緑色の「コード」ボタンをクリック
-     - (c), 「Download ZIP」をクリック
-     - (d), ダウンロードしたフォルダを任意の場所に移動し解凍
+     - (a) GitHub のリポジトリページにアクセス
+     - (b) 右にある緑色の「コード」ボタンをクリック
+     - (c) 「Download ZIP」をクリック
+     - (d) ダウンロードしたフォルダを任意の場所に移動し解凍
 
 3. **ターミナルでカレントディレクトリを指定**
    - ターミナル（コマンドプロンプト）で、アプリケーションのディレクトリに移動
@@ -108,11 +108,11 @@ CustomTkinter-SQLite-Note-Taking-App
 
 
 4. **依存ファイルを明示的に含める**
-     - (a), 以下のコマンドを実行して .specファイル(stacknote.spec)を生成:
+     - (a) 以下のコマンドを実行して .specファイル(stacknote.spec)を生成:
    ```bash
    pyinstaller --onefile --name stacknote stacknote.py
    ```
-     - (b), .spec ファイルを編集
+     - (b) .spec ファイルを編集
    ```bash
 	  a = Analysis(
            ['stacknote.py'],
@@ -129,7 +129,7 @@ CustomTkinter-SQLite-Note-Taking-App
            )
    ```
 
-     - (c), .spec ファイルを使用して再ビルド
+     - (c) .spec ファイルを使用して再ビルド
    ```bash
    pyinstaller stacknote.spec
    ```
