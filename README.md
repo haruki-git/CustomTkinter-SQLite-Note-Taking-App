@@ -37,7 +37,7 @@ CustomTkinter-SQLite-Note-Taking-App
 8. **ソート機能**
    - ツリービューのヘッダークリックで昇順・降順を切替可能
 
-  ![](image1.jpg)
+  ![](images\image1.jpg)
 
 
 ## プロジェクトの構造
