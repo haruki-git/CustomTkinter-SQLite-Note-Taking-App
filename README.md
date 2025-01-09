@@ -58,18 +58,86 @@ CustomTkinter-SQLite-Note-Taking-App
 1. **Pythonをインストール**
    - [公式サイト](https://www.python.org/)からPython 3.6以降をインストール
 
-2. **ターミナルでカレントディレクトリを指定**
-　- ターミナル（コマンドプロンプト）で、アプリケーションのディレクトリに移動
-   ```bash
-   cd C:\[ディレクトリの絶対パス]　
+2. **ノートファイルのダウンロード**
+   - リポジトリ全体をダウンロードする場合
+     - (a), GitHub のリポジトリページにアクセス
+     - (b), 右にある緑色の「コード」ボタンをクリック
+     - (c), 「Download ZIP」をクリック
+     - (d), ダウンロードしたフォルダを任意の場所に移動し解凍
 
-3. **必要なライブラリをインストール**
+3. **ターミナルでカレントディレクトリを指定**
+   - ターミナル（コマンドプロンプト）で、アプリケーションのディレクトリに移動
+   ```bash
+   cd [ディレクトリの絶対パス]　
+   ```
+   例：
+   ```bash
+   cd C:\Users\[ユーザー名]\pythonproject\CustomTkinter-SQLite-Note-Taking-App-main　
+   ```
+   
+4. **必要なライブラリをインストール**
    ```bash
    pip install customtkinter
 
-4. **メインアプリケーションコードを実行**
+5. **メインアプリケーションコードを実行**
    ```bash
    python stacknote.py
+   ```
+   
+## 実行ファイル化手順(PyInstallerを使用)
+1. **PyInstallerをインストール**
+   - ターミナル(コマンドプロンプト)で、下記を入力して実行:
+   ```bash
+   pip install pyinstaller
+
+2. **カレントディレクトリを指定**
+   ```bash
+   cd [ディレクトリの絶対パス]　
+   ```
+   
+3. **実行ファイル化**
+   - ファイルのアイコン無しで実行化の場合:
+   ```bash
+   pyinstaller --onefile stacknote.py
+   ```
+   - ファイルのアイコンを付けたい実行化の場合:
+   ```bash
+   pyinstaller --onefile --windowed --icon=stack_icon.ico stacknote.py
+   ```
+      - 上記いずれかを実行するとdistフォルダ内に実行ファイルが生成される
+
+
+4. **依存ファイルを明示的に含める**
+     - (a), 以下のコマンドを実行して .specファイル(stacknote.spec)を生成:
+   ```bash
+   pyinstaller --onefile --name stacknote stacknote.py
+   ```
+     - (b), .spec ファイルを編集
+   ```bash
+	  a = Analysis(
+           ['stacknote.py'],
+           pathex=['.'],
+           binaries=[],
+           datas=[('message_box.py', '.'), ('db_operation.py', '.')],  # 依存ファイル2つを指定
+           ) 
+	
+	  # アイコンを付ける場合は追加
+	  exe = EXE(
+           ...
+           icon='stack_icon.ico',  # アイコンを指定
+           ...
+           )
+   ```
+
+     - (c), .spec ファイルを使用して再ビルド
+   ```bash
+   pyinstaller stacknote.spec
+   ```
+   
+5. **作成した実行ファイルについての備考**
+     - distフォルダ内の「stacknote.exe」をクリックすると実行される
+     - ショートカットを作成した場合、「staknote.db」(デフォルトのデータベース)は実行ファイルのフォルダに生成される
+     - 一度データベースを選択すると、次回選択も同じフォルダを開く(データベース専用のフォルダを作ると楽)
 
 
 ## ライセンス
