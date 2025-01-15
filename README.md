@@ -1,5 +1,5 @@
 # プロジェクト名
-CustomTkinter-SQLite-Note-Taking-App
+CustomTkinter-SQLite ノート/メモ用デスクトップアプリ
 
 
 ## 概要
